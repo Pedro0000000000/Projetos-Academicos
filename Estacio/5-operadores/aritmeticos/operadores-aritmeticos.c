@@ -1,57 +1,45 @@
 #include <stdio.h>
 
-int main(){
+int main() {
 
-  // Atribuição simples: (=)
-  // Atribuição com soma: (+=)
-  // Atribuição com subtração: (-=)
-  // Atribuição com multiplicação (*=)
-  // Atribuição com divisão (/=)
+  // Declaração das variáveis
+  int number1, number2;
+  int soma, subtracao, multiplicacao;
+  float divisao;  // Alterado para float para suportar números decimais
+
+  // Exibe mensagem inicial
+  printf("Calculadora do Pedrão:\n");
+
+  // Entrada de dados
+  printf("Digite um numero: ");
+  scanf("%d", &number1);
+
+  printf("Digite o segundo numero: ");
+  scanf("%d", &number2);
+
+  // Realizando os cálculos corretos
+  soma = number1 + number2;
+  subtracao = number1 - number2;
+  multiplicacao = number1 * number2;
+
+  // Verificando se a divisão é válida (evita divisão por zero)
+  if (number2 != 0) {
+    divisao = (float)number1 / number2;  // Força a divisão ser em ponto flutuante
+  } else {
+    printf("\nErro: Divisão por zero não é permitida.\n");
+    divisao = 0;  // Define como 0 para evitar erro
+  }
+
+  // Exibindo os resultados
+  printf("\nResultados:\n");
+  printf("Soma: %d + %d = %d\n", number1, number2, soma);
+  printf("Subtração: %d - %d = %d\n", number1, number2, subtracao);
+  printf("Multiplicação: %d * %d = %d\n", number1, number2, multiplicacao);
+
+  if (number2 != 0) { // Só mostra a divisão se não for zero
+    printf("Divisão: %d / %d = %.2f\n", number1, number2, divisao);
+  }
+
+  return 0;  // Indica que o programa terminou corretamente
   
-  int number1, number2, resultado;
-
-  number1 = 12;
-  printf("Number1: %d\n", number1);
-
-  number2 = 15;
-  printf("Number2: %d\n", number2);
-
-  resultado = number1 + number2;
-  printf("Resultado de soma de %d += %d: %d\n ", number1, number2, resultado);
-
-  resultado += 40;
-  printf("Resultado = %d += 40 = %d", resultado - 40, resultado);
-
-  printf("\n--------------------------------------------------------------\n");
-
-  int a = 10;
-  int b = 5;
-
-  printf("a = %d", a);
-  printf("\nb = %d", b);
- 
-    // Operadores aritméticos
-    int soma = a + b;
-    int subtracao = a - b;
-    int multiplicacao = a * b;
-    int divisao = a / b;
- 
-    // Operadores de atribuição
-    a += 2; // a será 12
-    b *= 3; // b será 15
- 
-    // Operadores de incremento e decremento
-    a++; // a será 13
-    b--; // b será 14
- 
-    // Exibição dos resultados
-    printf("\nSoma: %d\n", soma);
-    printf("Subtração: %d\n", subtracao);
-    printf("Multiplicação: %d\n", multiplicacao);
-    printf("Divisão: %d\n", divisao);
-    printf("Novo valor de a (após += 2 e ++): %d\n", a);
-    printf("Novo valor de b (após *= 3 e --): %d\n", b);
- 
-    return 0;
-
-};
+}
