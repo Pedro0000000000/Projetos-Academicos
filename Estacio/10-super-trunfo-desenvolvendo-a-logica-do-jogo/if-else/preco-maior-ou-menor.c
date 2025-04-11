@@ -11,11 +11,11 @@ int main() {
 
     // Verificação
     if (preco1 > preco2) {
-        printf("preco1 é maior que preco2.\n");
+        printf("preço 1 é maior que preço 2.\n");
     } else if (preco1 == preco2) {
-        printf("preco1 é igual a preco2.\n");
+        printf("preço 1 é igual a preço 2.\n");
     } else {
-        printf("preco1 é menor que preco2.\n");
+        printf("preço 1 é menor que preço 2.\n");
     }
 
     return 0;
