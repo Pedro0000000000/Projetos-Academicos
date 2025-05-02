@@ -86,7 +86,8 @@ int main() {
     printf("3 - Comparação entre Carta 1 e Carta 2 modo simples:\n");
     printf("4 - Comparação simples entre Super Poder\n");
     printf("5 - Comparação entre Carta 1 e Carta 2 com IF e ELSE\n");
-    printf("6 - Escolha os atributos que você deseja comparar:\n");
+    printf("6 - Escolha os atributos que você deseja comparar: 'Switch'\n");
+    printf("7 - Escolha os atributos que você deseja comparar: 'Operadores Ternarios'\n");
     int opcao;
     scanf("%d", &opcao); // Lê a opção escolhida pelo usuário
 
@@ -293,5 +294,634 @@ int main() {
                     // Caso o usuário escolha um atributo inválido
                     printf("\nAtributo inválido! Tente novamente.\n");
             }
-    }
+        case 7:
+            int pontuacaoFinal1 = 0, pontuacaoFinal2 = 0;// Variáveis para armazenar a pontuação final das cartas 
+            // Escolha os atributos que você deseja comparar com operadores ternários 1
+            printf("\nEscolha os atributos que você deseja comparar:\n");
+            printf("1 - População\n");
+            printf("2 - Área\n");
+            printf("3 - PIB\n");
+            printf("4 - Pontos Turísticos\n");
+            printf("5 - Densidade Populacional\n");
+            printf("6 - PIB per Capita\n");
+            printf("7 - Resultado da Comparação: ");
+            int opcao_ternaria1, opcao_ternaria2, opcao_ternaria3, opcao_ternaria4, opcao_ternaria5, opcao_ternaria6, populacao_ternario, area_ternario, pib_ternario, pontos_turisticos_ternario, densidade_populacional_ternario, pib_per_capita_ternario;
+            scanf("%d", &opcao_ternaria1); // Lê o atributo escolhido pelo usuário
+
+            // Comparação usando operadores ternários
+            switch (opcao_ternaria1) {
+                case 1:
+                    printf("Você escolheu comparar a população.\n");
+                    populacao_ternario = (populacao1 > populacao2) ? 1 : 0; // Compara a população
+                    if(populacao_ternario == 1) {
+                        pontuacaoFinal1 += 1; // Adiciona 1 ponto para a carta 1
+                        printf("A carta 1 venceu!\n Carta 1: População: %lu > %lu População Carta 2\n", populacao1, populacao2); // Exibe a vitória da carta 1
+                    } else {
+                        pontuacaoFinal2 += 1; // Adiciona 1 ponto para a carta 2
+                        printf("A carta 2 venceu!\n Carta 1: População: %lu < %lu População Carta 2\n", populacao1, populacao2); // Exibe a vitória da carta 2
+                    }
+                break; // Sai do case 7.1
+                case 2:
+                    printf("Você escolheu comparar a área.\n");
+                    area_ternario = (area1 > area2) ? 1 : 0; // Compara a área
+                    if(area_ternario == 1) {
+                        pontuacaoFinal1 += 1; // Adiciona 1 ponto para a carta 1
+                        printf("A carta 1 venceu!\n Carta 1: Área: %.2f km² > %.2f km²\n", area1, area2); // Exibe a vitória da carta 1
+                    } else {
+                        pontuacaoFinal2 += 1; // Adiciona 1 ponto para a carta 2
+                        printf("A carta 2 venceu!\n Carta 1: Área: %.2f km² < %.2f km²\n", area1, area2); // Exibe a vitória da carta 2
+                    }
+                break; // Sai do case 7.2
+                case 3:
+                    printf("Você escolheu comparar o PIB.\n");
+                    pib_ternario = (pib1 > pib2) ? 1 : 0; // Compara o PIB
+                    if(pib_ternario == 1) {
+                        pontuacaoFinal1 += 1; // Adiciona 1 ponto para a carta 1
+                        printf("A carta 1 venceu!\n Carta 1: PIB: %.2f bilhoes > %.2f bilhoes\n", pib1, pib2); // Exibe a vitória da carta 1
+                    } else {
+                        pontuacaoFinal2 += 1; // Adiciona 1 ponto para a carta 2
+                        printf("A carta 2 venceu!\n Carta 1: PIB: %.2f bilhoes < %.2f bilhoes\n", pib1, pib2); // Exibe a vitória da carta 2
+                    }
+                break; // Sai do case 7.3
+                case 4:
+                    printf("Você escolheu comparar os pontos turísticos.\n");
+                    pontos_turisticos_ternario = (pontos_turisticos1 > pontos_turisticos2) ? 1 : 0; // Compara os pontos turísticos
+                    if(pontos_turisticos_ternario == 1) {
+                        pontuacaoFinal1 += 1; // Adiciona 1 ponto para a carta 1
+                        printf("A carta 1 venceu!\n Carta 1: Pontos Turísticos: %d > %d\n", pontos_turisticos1, pontos_turisticos2); // Exibe a vitória da carta 1
+                    } else {
+                        pontuacaoFinal2 += 1; // Adiciona 1 ponto para a carta 2
+                        printf("A carta 2 venceu!\n Carta 1: Pontos Turísticos: %d < %d\n", pontos_turisticos1, pontos_turisticos2); // Exibe a vitória da carta 2
+                    }
+                break; // Sai do case 7.4
+                case 5:
+                    printf("Você escolheu comparar a densidade populacional.\n");
+                    densidade_populacional_ternario = (densidade_populacional1 < densidade_populacional2) ? 1 : 0; // Compara a densidade populacional
+                    if(densidade_populacional_ternario == 1) {
+                        pontuacaoFinal1 += 1; // Adiciona 1 ponto para a carta 1
+                        printf("A carta 1 venceu!\n Carta 1: Densidade Populacional: %.2f hab/km² < %.2f hab/km²\n", densidade_populacional1, densidade_populacional2); // Exibe a vitória da carta 1
+                    } else {
+                        pontuacaoFinal2 += 1; // Adiciona 1 ponto para a carta 2
+                        printf("A carta 2 venceu!\n Carta 1: Densidade Populacional: %.2f hab/km² > %.2f hab/km²\n", densidade_populacional1, densidade_populacional2); // Exibe a vitória da carta 2
+                    }
+                break; // Sai do case 7.5
+                case 6:
+                    printf("Você escolheu comparar o PIB per Capita.\n");
+                    pib_per_capita_ternario = (pib_per_capita1 > pib_per_capita2) ? 1 : 0; // Compara o PIB per capita
+                    if(pib_per_capita_ternario == 1) {
+                        pontuacaoFinal1 += 1; // Adiciona 1 ponto para a carta 1
+                        printf("A carta 1 venceu!\n Carta 1: PIB per Capita: %.2f > %.2f\n", pib_per_capita1, pib_per_capita2); // Exibe a vitória da carta 1
+                    } else {
+                        pontuacaoFinal2 += 1; // Adiciona 1 ponto para a carta 2
+                        printf("A carta 2 venceu!\n Carta 1: PIB per Capita: %.2f < %.2f\n", pib_per_capita1, pib_per_capita2); // Exibe a vitória da carta 2
+                    }
+                break; // Sai do case 7.6
+                case 7:
+                    // Exibe o resultado da comparação
+                    printf("\nResultado da Comparação:\n");
+                    printf("Carta 1: %d pontos\n", pontuacaoFinal1); // Exibe a pontuação da carta 1
+                    printf("Carta 2: %d pontos\n", pontuacaoFinal2); // Exibe a pontuação da carta 2
+                    if(pontuacaoFinal1 > pontuacaoFinal2) {
+                        printf("A carta 1 venceu!\n"); // A carta 1 vence se sua pontuação for maior
+                    } else if(pontuacaoFinal2 > pontuacaoFinal1) {
+                        printf("A carta 2 venceu!\n"); // A carta 2 vence se sua pontuação for maior
+                    } else {
+                        printf("As cartas são iguais!\n"); // Empate se as pontuações forem iguais
+                    }
+                break; // Sai do case 7.7
+                default:
+                    printf("Atributo inválido! Tente novamente.\n"); // Caso o usuário escolha um atributo inválido
+           
+            }  
+             
+            // Escolha os atributos que você deseja comparar com operadores ternários 2
+            printf("\nEscolha os atributos que você deseja comparar:\n");
+            printf("1 - População\n");
+            printf("2 - Área\n");
+            printf("3 - PIB\n");
+            printf("4 - Pontos Turísticos\n");
+            printf("5 - Densidade Populacional\n");
+            printf("6 - PIB per Capita\n");
+            printf("7 - Resultado da Comparação: ");
+            scanf("%d", &opcao_ternaria2); // Lê o atributo escolhido pelo usuário
+
+            if(opcao_ternaria1 == opcao_ternaria2) {
+                printf("Você escolheu comparar o mesmo atributo. Tente novamente!\n");
+            } else {
+                // Comparação usando operadores ternários
+                switch (opcao_ternaria2) {
+                    case 1:
+                        printf("Você escolheu comparar a população.\n");
+                        populacao_ternario = (populacao1 > populacao2) ? 1 : 0; // Compara a população
+                        if(populacao_ternario == 1) {
+                            pontuacaoFinal1 += 1; // Adiciona 1 ponto para a carta 1
+                            printf("A carta 1 venceu!\n Carta 1: População: %lu > %lu\n População Carta 2: : ", populacao1, populacao2); // Exibe a vitória da carta 1
+                        } else {
+                            pontuacaoFinal2 += 1; // Adiciona 1 ponto para a carta 2
+                            printf("A carta 2 venceu!\n Carta 1: População: %lu < %lu\n População Carta 2: : ", populacao1, populacao2); // Exibe a vitória da carta 2
+                        }
+                    break; // Sai do case 2.1
+                    case 2:
+                        printf("Você escolheu comparar a área.\n");
+                        area_ternario = (area1 > area2) ? 1 : 0; // Compara a área
+                        if(area_ternario == 1) {
+                            pontuacaoFinal1 += 1; // Adiciona 1 ponto para a carta 1
+                            printf("A carta 1 venceu!\n Carta 1: Área: %.2f km² > %.2f km²\n", area1, area2); // Exibe a vitória da carta 1
+                        } else {
+                            pontuacaoFinal2 += 1; // Adiciona 1 ponto para a carta 2
+                            printf("A carta 2 venceu!\n Carta 1: Área: %.2f km² < %.2f km²\n", area1, area2); // Exibe a vitória da carta 2
+                        }
+                    break; // Sai do case 2.2
+                    case 3:
+                        printf("Você escolheu comparar o PIB.\n");
+                        pib_ternario = (pib1 > pib2) ? 1 : 0; // Compara o PIB
+                        if(pib_ternario == 1) {
+                            pontuacaoFinal1 += 1; // Adiciona 1 ponto para a carta 1
+                            printf("A carta 1 venceu!\n Carta 1: PIB: %.2f bilhoes > %.2f bilhoes\n", pib1, pib2); // Exibe a vitória da carta 1
+                        } else {
+                            pontuacaoFinal2 += 1; // Adiciona 1 ponto para a carta 2
+                            printf("A carta 2 venceu!\n Carta 1: PIB: %.2f bilhoes < %.2f bilhoes\n", pib1, pib2); // Exibe a vitória da carta 2
+                        }
+                    break; // Sai do case 2.3
+                    case 4:
+                        printf("Você escolheu comparar os pontos turísticos.\n");
+                        pontos_turisticos_ternario = (pontos_turisticos1 > pontos_turisticos2) ? 1 : 0; // Compara os pontos turísticos
+                        if(pontos_turisticos_ternario == 1) {
+                            pontuacaoFinal1 += 1; // Adiciona 1 ponto para a carta 1
+                            printf("A carta 1 venceu!\n Carta 1: Pontos Turísticos: %d > %d\n", pontos_turisticos1, pontos_turisticos2); // Exibe a vitória da carta 1
+                        } else {
+                            pontuacaoFinal2 += 1; // Adiciona 1 ponto para a carta 2
+                            printf("A carta 2 venceu!\n Carta 1: Pontos Turísticos: %d < %d\n", pontos_turisticos1, pontos_turisticos2); // Exibe a vitória da carta 2
+                        }
+                    break; // Sai do case 2.4
+                    case 5:
+                        printf("Você escolheu comparar a densidade populacional.\n");
+                        densidade_populacional_ternario = (densidade_populacional1 < densidade_populacional2) ? 1 : 0; // Compara a densidade populacional
+                        if(densidade_populacional_ternario == 1) {
+                            pontuacaoFinal1 += 1; // Adiciona 1 ponto para a carta 1
+                            printf("A carta 1 venceu!\n Carta 1: Densidade Populacional: %.2f hab/km² < %.2f hab/km²\n", densidade_populacional1, densidade_populacional2); // Exibe a vitória da carta 1
+                        } else {
+                            pontuacaoFinal2 += 1; // Adiciona 1 ponto para a carta 2
+                            printf("A carta 2 venceu!\n Carta 1: Densidade Populacional: %.2f hab/km² > %.2f hab/km²\n", densidade_populacional1, densidade_populacional2); // Exibe a vitória da carta 2
+                        }
+                        break; // Sai do case 2.5
+                    case 6:
+                        printf("Você escolheu comparar o PIB per Capita.\n");
+                        pib_per_capita_ternario = (pib_per_capita1 > pib_per_capita2) ? 1 : 0; // Compara o PIB per capita
+                        if(pib_per_capita_ternario == 1) {
+                            pontuacaoFinal1 += 1; // Adiciona 1 ponto para a carta 1
+                            printf("A carta 1 venceu!\n Carta 1: PIB per Capita: %.2f > %.2f\n", pib_per_capita1, pib_per_capita2); // Exibe a vitória da carta 1
+                        } else {
+                            pontuacaoFinal2 += 1; // Adiciona 1 ponto para a carta 2
+                            printf("A carta 2 venceu!\n Carta 1: PIB per Capita: %.2f < %.2f\n", pib_per_capita1, pib_per_capita2); // Exibe a vitória da carta 2
+                        }
+                        break; // Sai do case 2.6
+                        case 7:
+                        // Exibe o resultado da comparação
+                        printf("\nResultado da Comparação:\n");
+                        printf("Carta 1: %d pontos\n", pontuacaoFinal1); // Exibe a pontuação da carta 1
+                        printf("Carta 2: %d pontos\n", pontuacaoFinal2); // Exibe a pontuação da carta 2
+                        if(pontuacaoFinal1 > pontuacaoFinal2) {
+                            printf("A carta 1 venceu!\n"); // A carta 1 vence se sua pontuação for maior
+                        } else if(pontuacaoFinal2 > pontuacaoFinal1) {
+                            printf("A carta 2 venceu!\n"); // A carta 2 vence se sua pontuação for maior
+                        } else {
+                            printf("As cartas são iguais!\n"); // Empate se as pontuações forem iguais
+                        }
+                    break; // Sai do case 2.7
+                    default:
+                        printf("Atributo inválido! Tente novamente.\n"); // Caso o usuário escolha um atributo inválido
+            
+                }
+            }
+
+            // Escolha os atributos que você deseja comparar com operadores ternários 3
+            printf("\nEscolha os atributos que você deseja comparar:\n");
+            printf("1 - População\n");
+            printf("2 - Área\n");
+            printf("3 - PIB\n");
+            printf("4 - Pontos Turísticos\n");
+            printf("5 - Densidade Populacional\n");
+            printf("6 - PIB per Capita\n");
+            printf("7 - Resultado da Comparação: ");
+            scanf("%d", &opcao_ternaria3); // Lê o atributo escolhido pelo usuário
+
+            if((opcao_ternaria1 == opcao_ternaria2) || (opcao_ternaria1 == opcao_ternaria3) || 
+               (opcao_ternaria2 == opcao_ternaria3)) {
+                printf("Você escolheu comparar o mesmo atributo. Tente novamente!\n");
+            } else {
+                // Comparação usando operadores ternários
+                switch (opcao_ternaria3) {
+                    case 1:
+                        printf("Você escolheu comparar a população.\n");
+                        populacao_ternario = (populacao1 > populacao2) ? 1 : 0; // Compara a população
+                        if(populacao_ternario == 1) {
+                            pontuacaoFinal1 += 1; // Adiciona 1 ponto para a carta 1
+                            printf("A carta 1 venceu!\n Carta 1: População: %lu > %lu\n População Carta 2: : ", populacao1, populacao2); // Exibe a vitória da carta 1
+                        } else {
+                            pontuacaoFinal2 += 1; // Adiciona 1 ponto para a carta 2
+                            printf("A carta 2 venceu!\n Carta 1: População: %lu < %lu\n População Carta 2: : ", populacao1, populacao2); // Exibe a vitória da carta 2
+                        }
+                    break; // Sai do case 2.1
+                    case 2:
+                        printf("Você escolheu comparar a área.\n");
+                        area_ternario = (area1 > area2) ? 1 : 0; // Compara a área
+                        if(area_ternario == 1) {
+                            pontuacaoFinal1 += 1; // Adiciona 1 ponto para a carta 1
+                            printf("A carta 1 venceu!\n Carta 1: Área: %.2f km² > %.2f km²\n", area1, area2); // Exibe a vitória da carta 1
+                        } else {
+                            pontuacaoFinal2 += 1; // Adiciona 1 ponto para a carta 2
+                            printf("A carta 2 venceu!\n Carta 1: Área: %.2f km² < %.2f km²\n", area1, area2); // Exibe a vitória da carta 2
+                        }
+                    break;
+                    case 3:
+                        printf("Você escolheu comparar o PIB.\n");
+                        pib_ternario = (pib1 > pib2) ? 1 : 0; // Compara o PIB
+                        if(pib_ternario == 1) {
+                            pontuacaoFinal1 += 1; // Adiciona 1 ponto para a carta 1
+                            printf("A carta 1 venceu!\n Carta 1: PIB: %.2f bilhoes > %.2f bilhoes\n", pib1, pib2); // Exibe a vitória da carta 1
+                        } else {
+                            pontuacaoFinal2 += 1; // Adiciona 1 ponto para a carta 2
+                            printf("A carta 2 venceu!\n Carta 1: PIB: %.2f bilhoes < %.2f bilhoes\n", pib1, pib2); // Exibe a vitória da carta 2
+                        }
+                    break;
+                    case 4:
+                        printf("Você escolheu comparar os pontos turísticos.\n");
+                        pontos_turisticos_ternario = (pontos_turisticos1 > pontos_turisticos2) ? 1 : 0; // Compara os pontos turísticos
+                        if(pontos_turisticos_ternario == 1) {
+                            pontuacaoFinal1 += 1; // Adiciona 1 ponto para a carta 1
+                            printf("A carta 1 venceu!\n Carta 1: Pontos Turísticos: %d > %d\n", pontos_turisticos1, pontos_turisticos2); // Exibe a vitória da carta 1
+                        } else {
+                            pontuacaoFinal2 += 1; // Adiciona 1 ponto para a carta 2
+                            printf("A carta 2 venceu!\n Carta 1: Pontos Turísticos: %d < %d\n", pontos_turisticos1, pontos_turisticos2); // Exibe a vitória da carta 2
+                        }
+                    break;
+                    case 5:
+                        printf("Você escolheu comparar a densidade populacional.\n");
+                        densidade_populacional_ternario = (densidade_populacional1 < densidade_populacional2) ? 1 : 0; // Compara a densidade populacional
+                        if(densidade_populacional_ternario == 1) {
+                            pontuacaoFinal1 += 1; // Adiciona 1 ponto para a carta 1
+                            printf("A carta 1 venceu!\n Carta 1: Densidade Populacional: %.2f hab/km² < %.2f hab/km²\n", densidade_populacional1, densidade_populacional2); // Exibe a vitória da carta 1
+                        } else {
+                            pontuacaoFinal2 += 1; // Adiciona 1 ponto para a carta 2
+                            printf("A carta 2 venceu!\n Carta 1: Densidade Populacional: %.2f hab/km² > %.2f hab/km²\n", densidade_populacional1, densidade_populacional2); // Exibe a vitória da carta 2
+                        }
+                    break;
+                    case 6:
+                        printf("Você escolheu comparar o PIB per Capita.\n");
+                        pib_per_capita_ternario = (pib_per_capita1 > pib_per_capita2) ? 1 : 0; // Compara o PIB per capita
+                        if(pib_per_capita_ternario == 1) {
+                            pontuacaoFinal1 += 1; // Adiciona 1 ponto para a carta 1
+                            printf("A carta 1 venceu!\n Carta 1: PIB per Capita: %.2f > %.2f\n", pib_per_capita1, pib_per_capita2); // Exibe a vitória da carta 1
+                        } else {
+                            pontuacaoFinal2 += 1; // Adiciona 1 ponto para a carta 2
+                            printf("A carta 2 venceu!\n Carta 1: PIB per Capita: %.2f < %.2f\n", pib_per_capita1, pib_per_capita2); // Exibe a vitória da carta 2
+                        }
+                        break;
+                        case 7:
+                        // Exibe o resultado da comparação
+                        printf("\nResultado da Comparação:\n");
+                        printf("Carta 1: %d pontos\n", pontuacaoFinal1); // Exibe a pontuação da carta 1
+                        printf("Carta 2: %d pontos\n", pontuacaoFinal2); // Exibe a pontuação da carta 2
+                        if(pontuacaoFinal1 > pontuacaoFinal2) {
+                            printf("A carta 1 venceu!\n"); // A carta 1 vence se sua pontuação for maior
+                        } else if(pontuacaoFinal2 > pontuacaoFinal1) {
+                            printf("A carta 2 venceu!\n"); // A carta 2 vence se sua pontuação for maior
+                        } else {
+                            printf("As cartas são iguais!\n"); // Empate se as pontuações forem iguais
+                        }
+                        break;
+                    default:
+                        printf("Atributo inválido! Tente novamente.\n"); // Caso o usuário escolha um atributo inválido
+                }
+            }
+
+            // Escolha os atributos que você deseja comparar com operadores ternários 4
+            printf("\nEscolha os atributos que você deseja comparar:\n");
+            printf("1 - População\n");
+            printf("2 - Área\n");
+            printf("3 - PIB\n");
+            printf("4 - Pontos Turísticos\n");
+            printf("5 - Densidade Populacional\n");
+            printf("6 - PIB per Capita\n");
+            printf("7 - Resultado da Comparação: ");
+            scanf("%d", &opcao_ternaria4); // Lê o atributo escolhido pelo usuário
+
+            if((opcao_ternaria1 == opcao_ternaria2) || (opcao_ternaria1 == opcao_ternaria3) || (opcao_ternaria1 == opcao_ternaria4) || 
+               (opcao_ternaria2 == opcao_ternaria3) || (opcao_ternaria2 == opcao_ternaria4) ||
+               (opcao_ternaria3 == opcao_ternaria4)) {
+                printf("Você escolheu comparar o mesmo atributo. Tente novamente!\n");
+            } else {
+                // Comparação usando operadores ternários
+                switch (opcao_ternaria4) {
+                    case 1:
+                        printf("Você escolheu comparar a população.\n");
+                        populacao_ternario = (populacao1 > populacao2) ? 1 : 0; // Compara a população
+                        if(populacao_ternario == 1) {
+                            pontuacaoFinal1 += 1; // Adiciona 1 ponto para a carta 1
+                            printf("A carta 1 venceu!\n Carta 1: População: %lu > %lu\n População Carta 2: : ", populacao1, populacao2); // Exibe a vitória da carta 1
+                        } else {
+                            pontuacaoFinal2 += 1; // Adiciona 1 ponto para a carta 2
+                            printf("A carta 2 venceu!\n Carta 1: População: %lu < %lu\n População Carta 2: : ", populacao1, populacao2); // Exibe a vitória da carta 2
+                        }
+                    break;
+                    case 2:
+                        printf("Você escolheu comparar a área.\n");
+                        area_ternario = (area1 > area2) ? 1 : 0; // Compara a área
+                        if(area_ternario == 1) {
+                            pontuacaoFinal1 += 1; // Adiciona 1 ponto para a carta 1
+                            printf("A carta 1 venceu!\n Carta 1: Área: %.2f km² > %.2f km²\n", area1, area2); // Exibe a vitória da carta 1
+                        } else {
+                            pontuacaoFinal2 += 1; // Adiciona 1 ponto para a carta 2
+                            printf("A carta 2 venceu!\n Carta 1: Área: %.2f km² < %.2f km²\n", area1, area2); // Exibe a vitória da carta 2
+                        }
+                     break;
+                    case 3:
+                        printf("Você escolheu comparar o PIB.\n");
+                        pib_ternario = (pib1 > pib2) ? 1 : 0; // Compara o PIB
+                        if(pib_ternario == 1) {
+                            pontuacaoFinal1 += 1; // Adiciona 1 ponto para a carta 1
+                            printf("A carta 1 venceu!\n Carta 1: PIB: %.2f bilhoes > %.2f bilhoes\n", pib1, pib2); // Exibe a vitória da carta 1
+                        } else {
+                            pontuacaoFinal2 += 1; // Adiciona 1 ponto para a carta 2
+                            printf("A carta 2 venceu!\n Carta 1: PIB: %.2f bilhoes < %.2f bilhoes\n", pib1, pib2); // Exibe a vitória da carta 2
+                        }
+                    break;
+                    case 4:
+                        printf("Você escolheu comparar os pontos turísticos.\n");
+                        pontos_turisticos_ternario = (pontos_turisticos1 > pontos_turisticos2) ? 1 : 0; // Compara os pontos turísticos
+                        if(pontos_turisticos_ternario == 1) {
+                            pontuacaoFinal1 += 1; // Adiciona 1 ponto para a carta 1
+                            printf("A carta 1 venceu!\n Carta 1: Pontos Turísticos: %d > %d\n", pontos_turisticos1, pontos_turisticos2); // Exibe a vitória da carta 1
+                        } else {
+                            pontuacaoFinal2 += 1; // Adiciona 1 ponto para a carta 2
+                            printf("A carta 2 venceu!\n Carta 1: Pontos Turísticos: %d < %d\n", pontos_turisticos1, pontos_turisticos2); // Exibe a vitória da carta 2
+                        }
+                    break;
+                    case 5:
+                        printf("Você escolheu comparar a densidade populacional.\n");
+                        densidade_populacional_ternario = (densidade_populacional1 < densidade_populacional2) ? 1 : 0; // Compara a densidade populacional
+                        if(densidade_populacional_ternario == 1) {
+                            pontuacaoFinal1 += 1; // Adiciona 1 ponto para a carta 1
+                            printf("A carta 1 venceu!\n Carta 1: Densidade Populacional: %.2f hab/km² < %.2f hab/km²\n", densidade_populacional1, densidade_populacional2); // Exibe a vitória da carta 1
+                        } else {
+                            pontuacaoFinal2 += 1; // Adiciona 1 ponto para a carta 2
+                            printf("A carta 2 venceu!\n Carta 1: Densidade Populacional: %.2f hab/km² > %.2f hab/km²\n", densidade_populacional1, densidade_populacional2); // Exibe a vitória da carta 2
+                        }
+                    break;
+                    case 6:
+                        printf("Você escolheu comparar o PIB per Capita.\n");
+                        pib_per_capita_ternario = (pib_per_capita1 > pib_per_capita2) ? 1 : 0; // Compara o PIB per capita
+                        if(pib_per_capita_ternario == 1) {
+                            pontuacaoFinal1 += 1; // Adiciona 1 ponto para a carta 1
+                            printf("A carta 1 venceu!\n Carta 1: PIB per Capita: %.2f > %.2f\n", pib_per_capita1, pib_per_capita2); // Exibe a vitória da carta 1
+                        } else {
+                            pontuacaoFinal2 += 1; // Adiciona 1 ponto para a carta 2
+                            printf("A carta 2 venceu!\n Carta 1: PIB per Capita: %.2f < %.2f\n", pib_per_capita1, pib_per_capita2); // Exibe a vitória da carta 2
+                        }
+                    break;
+                        case 7:
+                        // Exibe o resultado da comparação
+                        printf("\nResultado da Comparação:\n");
+                        printf("Carta 1: %d pontos\n", pontuacaoFinal1); // Exibe a pontuação da carta 1
+                        printf("Carta 2: %d pontos\n", pontuacaoFinal2); // Exibe a pontuação da carta 2
+                        if(pontuacaoFinal1 > pontuacaoFinal2) {
+                            printf("A carta 1 venceu!\n"); // A carta 1 vence se sua pontuação for maior
+                        } else if(pontuacaoFinal2 > pontuacaoFinal1) {
+                            printf("A carta 2 venceu!\n"); // A carta 2 vence se sua pontuação for maior
+                        } else {
+                            printf("As cartas são iguais!\n"); // Empate se as pontuações forem iguais
+                        }
+                        break;
+                    default:
+                        printf("Atributo inválido! Tente novamente.\n"); // Caso o usuário escolha um atributo inválido
+            
+                }       
+            }
+
+            // Escolha os atributos que você deseja comparar com operadores ternários 5
+            printf("\nEscolha os atributos que você deseja comparar:\n");
+            printf("1 - População\n");
+            printf("2 - Área\n");
+            printf("3 - PIB\n");
+            printf("4 - Pontos Turísticos\n");
+            printf("5 - Densidade Populacional\n");
+            printf("6 - PIB per Capita\n");
+            printf("7 - Resultado da Comparação: ");
+            scanf("%d", &opcao_ternaria5); // Lê o atributo escolhido pelo usuário
+
+            if((opcao_ternaria1 == opcao_ternaria2) || (opcao_ternaria1 == opcao_ternaria3) || (opcao_ternaria1 == opcao_ternaria4) || (opcao_ternaria1 == opcao_ternaria5) || (opcao_ternaria1 == opcao_ternaria6) ||
+               (opcao_ternaria2 == opcao_ternaria3) || (opcao_ternaria2 == opcao_ternaria4) || (opcao_ternaria2 == opcao_ternaria5) || (opcao_ternaria2 == opcao_ternaria6) ||
+               (opcao_ternaria3 == opcao_ternaria4) || (opcao_ternaria3 == opcao_ternaria5) || (opcao_ternaria3 == opcao_ternaria6) ||
+               (opcao_ternaria4 == opcao_ternaria5) || (opcao_ternaria4 == opcao_ternaria6) ||
+               (opcao_ternaria5 == opcao_ternaria6)) {
+                printf("Você escolheu comparar o mesmo atributo. Tente novamente!\n");
+            } else {
+                // Comparação usando operadores ternários
+                switch (opcao_ternaria5) {
+                    case 1:
+                        printf("Você escolheu comparar a população.\n");
+                        populacao_ternario = (populacao1 > populacao2) ? 1 : 0; // Compara a população
+                        if(populacao_ternario == 1) {
+                            pontuacaoFinal1 += 1; // Adiciona 1 ponto para a carta 1
+                            printf("A carta 1 venceu!\n Carta 1: População: %lu > %lu\n População Carta 2: : ", populacao1, populacao2); // Exibe a vitória da carta 1
+                        } else {
+                            pontuacaoFinal2 += 1; // Adiciona 1 ponto para a carta 2
+                            printf("A carta 2 venceu!\n Carta 1: População: %lu < %lu\n População Carta 2: : ", populacao1, populacao2); // Exibe a vitória da carta 2
+                        }
+                    break;
+                    case 2:
+                        printf("Você escolheu comparar a área.\n");
+                        area_ternario = (area1 > area2) ? 1 : 0; // Compara a área
+                        if(area_ternario == 1) {
+                            pontuacaoFinal1 += 1; // Adiciona 1 ponto para a carta 1
+                            printf("A carta 1 venceu!\n Carta 1: Área: %.2f km² > %.2f km²\n", area1, area2); // Exibe a vitória da carta 1
+                        } else {
+                            pontuacaoFinal2 += 1; // Adiciona 1 ponto para a carta 2
+                            printf("A carta 2 venceu!\n Carta 1: Área: %.2f km² < %.2f km²\n", area1, area2); // Exibe a vitória da carta 2
+                        }
+                    break;
+                    case 3:
+                        printf("Você escolheu comparar o PIB.\n");
+                        pib_ternario = (pib1 > pib2) ? 1 : 0; // Compara o PIB
+                        if(pib_ternario == 1) {
+                            pontuacaoFinal1 += 1; // Adiciona 1 ponto para a carta 1
+                            printf("A carta 1 venceu!\n Carta 1: PIB: %.2f bilhoes > %.2f bilhoes\n", pib1, pib2); // Exibe a vitória da carta 1
+                        } else {
+                            pontuacaoFinal2 += 1; // Adiciona 1 ponto para a carta 2
+                            printf("A carta 2 venceu!\n Carta 1: PIB: %.2f bilhoes < %.2f bilhoes\n", pib1, pib2); // Exibe a vitória da carta 2
+                        }
+                    break;
+                    case 4:
+                        printf("Você escolheu comparar os pontos turísticos.\n");
+                        pontos_turisticos_ternario = (pontos_turisticos1 > pontos_turisticos2) ? 1 : 0; // Compara os pontos turísticos
+                        if(pontos_turisticos_ternario == 1) {
+                            pontuacaoFinal1 += 1; // Adiciona 1 ponto para a carta 1
+                            printf("A carta 1 venceu!\n Carta 1: Pontos Turísticos: %d > %d\n", pontos_turisticos1, pontos_turisticos2); // Exibe a vitória da carta 1
+                        } else {
+                            pontuacaoFinal2 += 1; // Adiciona 1 ponto para a carta 2
+                            printf("A carta 2 venceu!\n Carta 1: Pontos Turísticos: %d < %d\n", pontos_turisticos1, pontos_turisticos2); // Exibe a vitória da carta 2
+                        }
+                    break;
+                    case 5:
+                        printf("Você escolheu comparar a densidade populacional.\n");
+                        densidade_populacional_ternario = (densidade_populacional1 < densidade_populacional2) ? 1 : 0; // Compara a densidade populacional
+                        if(densidade_populacional_ternario == 1) {
+                            pontuacaoFinal1 += 1; // Adiciona 1 ponto para a carta 1
+                            printf("A carta 1 venceu!\n Carta 1: Densidade Populacional: %.2f hab/km² < %.2f hab/km²\n", densidade_populacional1, densidade_populacional2); // Exibe a vitória da carta 1
+                        } else {
+                            pontuacaoFinal2 += 1; // Adiciona 1 ponto para a carta 2
+                            printf("A carta 2 venceu!\n Carta 1: Densidade Populacional: %.2f hab/km² > %.2f hab/km²\n", densidade_populacional1, densidade_populacional2); // Exibe a vitória da carta 2
+                        }
+                        break;
+                    case 6:
+                        printf("Você escolheu comparar o PIB per Capita.\n");
+                        pib_per_capita_ternario = (pib_per_capita1 > pib_per_capita2) ? 1 : 0; // Compara o PIB per capita
+                        if(pib_per_capita_ternario == 1) {
+                            pontuacaoFinal1 += 1; // Adiciona 1 ponto para a carta 1
+                            printf("A carta 1 venceu!\n Carta 1: PIB per Capita: %.2f > %.2f\n", pib_per_capita1, pib_per_capita2); // Exibe a vitória da carta 1
+                        } else {
+                            pontuacaoFinal2 += 1; // Adiciona 1 ponto para a carta 2
+                            printf("A carta 2 venceu!\n Carta 1: PIB per Capita: %.2f < %.2f\n", pib_per_capita1, pib_per_capita2); // Exibe a vitória da carta 2
+                        }
+                        break;
+                        case 7:
+                        // Exibe o resultado da comparação
+                        printf("Carta 1: %d pontos\n", pontuacaoFinal1); // Exibe a pontuação da carta 1
+                        printf("Carta 2: %d pontos\n", pontuacaoFinal2); // Exibe a pontuação da carta 2
+                        if(pontuacaoFinal1 > pontuacaoFinal2) {
+                            printf("A carta 1 venceu!\n"); // A carta 1 vence se sua pontuação for maior
+                        } else if(pontuacaoFinal2 > pontuacaoFinal1) {
+                            printf("A carta 2 venceu!\n"); // A carta 2 vence se sua pontuação for maior
+                        } else {
+                            printf("Empate entre as cartas!\n"); // Empate se as pontuações forem iguais
+                        }
+                        break;
+                    default:
+                        printf("Atributo inválido! Tente novamente.\n"); // Caso o usuário escolha um atributo inválido
+                }
+            }
+
+            // Escolha os atributos que você deseja comparar com operadores ternários 6
+            printf("\nEscolha os atributos que você deseja comparar:\n");
+            printf("1 - População\n");
+            printf("2 - Área\n");
+            printf("3 - PIB\n");
+            printf("4 - Pontos Turísticos\n");
+            printf("5 - Densidade Populacional\n");
+            printf("6 - PIB per Capita\n");
+            printf("7 - Resultado da Comparação: ");
+            scanf("%d", &opcao_ternaria6); // Lê o atributo escolhido pelo usuário
+
+            if((opcao_ternaria1 == opcao_ternaria2) || (opcao_ternaria1 == opcao_ternaria3) || (opcao_ternaria1 == opcao_ternaria4) || (opcao_ternaria1 == opcao_ternaria5) || (opcao_ternaria1 == opcao_ternaria6) ||
+               (opcao_ternaria2 == opcao_ternaria3) || (opcao_ternaria2 == opcao_ternaria4) || (opcao_ternaria2 == opcao_ternaria5) || (opcao_ternaria2 == opcao_ternaria6) ||
+               (opcao_ternaria3 == opcao_ternaria4) || (opcao_ternaria3 == opcao_ternaria5) || (opcao_ternaria3 == opcao_ternaria6) ||
+               (opcao_ternaria4 == opcao_ternaria5) || (opcao_ternaria4 == opcao_ternaria6) ||
+               (opcao_ternaria5 == opcao_ternaria6)) {
+
+                printf("Você escolheu comparar o mesmo atributo. Tente novamente!\n");
+            } else {
+                // Comparação usando operadores ternários
+                switch (opcao_ternaria6) {
+                    case 1:
+                        printf("Você escolheu comparar a população.\n");
+                        populacao_ternario = (populacao1 > populacao2) ? 1 : 0; // Compara a população
+                        if(populacao_ternario == 1) {
+                            pontuacaoFinal1 += 1; // Adiciona 1 ponto para a carta 1
+                            printf("A carta 1 venceu!\n Carta 1: População: %lu > %lu\n População Carta 2: : ", populacao1, populacao2); // Exibe a vitória da carta 1
+                        } else {
+                            pontuacaoFinal2 += 1; // Adiciona 1 ponto para a carta 2
+                            printf("A carta 2 venceu!\n Carta 1: População: %lu < %lu\n População Carta 2: : ", populacao1, populacao2); // Exibe a vitória da carta 2
+                        }
+                    break;
+                    case 2:
+                        printf("Você escolheu comparar a área.\n");
+                        area_ternario = (area1 > area2) ? 1 : 0; // Compara a área
+                        if(area_ternario == 1) {
+                            pontuacaoFinal1 += 1; // Adiciona 1 ponto para a carta 1
+                            printf("A carta 1 venceu!\n Carta 1: Área: %.2f km² > %.2f km²\n", area1, area2); // Exibe a vitória da carta 1
+                        } else {
+                            pontuacaoFinal2 += 1; // Adiciona 1 ponto para a carta 2
+                            printf("A carta 2 venceu!\n Carta 1: Área: %.2f km² < %.2f km²\n", area1, area2); // Exibe a vitória da carta 2
+                        }
+                    break;
+                    case 3:
+                        printf("Você escolheu comparar o PIB.\n");
+                        pib_ternario = (pib1 > pib2) ? 1 : 0; // Compara o PIB
+                        if(pib_ternario == 1) {
+                            pontuacaoFinal1 += 1; // Adiciona 1 ponto para a carta 1
+                            printf("A carta 1 venceu!\n Carta 1: PIB: %.2f bilhoes > %.2f bilhoes\n", pib1, pib2); // Exibe a vitória da carta 1
+                        } else {
+                            pontuacaoFinal2 += 1; // Adiciona 1 ponto para a carta 2
+                            printf("A carta 2 venceu!\n Carta 1: PIB: %.2f bilhoes < %.2f bilhoes\n", pib1, pib2); // Exibe a vitória da carta 2
+                        }
+                    break;
+                    case 4:
+                        printf("Você escolheu comparar os pontos turísticos.\n");
+                        pontos_turisticos_ternario = (pontos_turisticos1 > pontos_turisticos2) ? 1 : 0; // Compara os pontos turísticos
+                        if(pontos_turisticos_ternario == 1) {
+                            pontuacaoFinal1 += 1; // Adiciona 1 ponto para a carta 1
+                            printf("A carta 1 venceu!\n Carta 1: Pontos Turísticos: %d > %d\n", pontos_turisticos1, pontos_turisticos2); // Exibe a vitória da carta 1
+                        } else {
+                            pontuacaoFinal2 += 1; // Adiciona 1 ponto para a carta 2
+                            printf("A carta 2 venceu!\n Carta 1: Pontos Turísticos: %d < %d\n", pontos_turisticos1, pontos_turisticos2); // Exibe a vitória da carta 2
+                        }
+                    break;
+                    case 5:
+                        printf("Você escolheu comparar a densidade populacional.\n");
+                        densidade_populacional_ternario = (densidade_populacional1 < densidade_populacional2) ? 1 : 0; // Compara a densidade populacional
+                        if(densidade_populacional_ternario == 1) {
+                            pontuacaoFinal1 += 1; // Adiciona 1 ponto para a carta 1
+                            printf("A carta 1 venceu!\n Carta 1: Densidade Populacional: %.2f hab/km² < %.2f hab/km²\n", densidade_populacional1, densidade_populacional2); // Exibe a vitória da carta 1
+                        } else {
+                            pontuacaoFinal2 += 1; // Adiciona 1 ponto para a carta 2
+                            printf("A carta 2 venceu!\n Carta 1: Densidade Populacional: %.2f hab/km² > %.2f hab/km²\n", densidade_populacional1, densidade_populacional2); // Exibe a vitória da carta 2
+                        }
+                    break;
+                    case 6:
+                        printf("Você escolheu comparar o PIB per Capita.\n");
+                        pib_per_capita_ternario = (pib_per_capita1 > pib_per_capita2) ? 1 : 0; // Compara o PIB per capita
+                        if(pib_per_capita_ternario == 1) {
+                            pontuacaoFinal1 += 1; // Adiciona 1 ponto para a carta 1
+                            printf("A carta 1 venceu!\n Carta 1: PIB per Capita: %.2f > %.2f\n", pib_per_capita1, pib_per_capita2); // Exibe a vitória da carta 1
+                        } else {
+                            pontuacaoFinal2 += 1; // Adiciona 1 ponto para a carta 2
+                            printf("A carta 2 venceu!\n Carta 1: PIB per Capita: %.2f < %.2f\n", pib_per_capita1, pib_per_capita2); // Exibe a vitória da carta 2
+                        }
+                        break;
+                        case 7:
+                        // Exibe o resultado da comparação
+                        printf("\nResultado da Comparação:\n");
+                        printf("Carta 1: %d pontos\n", pontuacaoFinal1); // Exibe a pontuação da carta 1
+                        printf("Carta 2: %d pontos\n", pontuacaoFinal2); // Exibe a pontuação da carta 2
+                        if(pontuacaoFinal1 > pontuacaoFinal2) {
+                            printf("A carta 1 venceu!\n"); // A carta 1 vence se sua pontuação for maior
+                        } else if(pontuacaoFinal2 > pontuacaoFinal1) {
+                            printf("A carta 2 venceu!\n"); // A carta 2 vence se sua pontuação for maior
+                        } else {
+                            printf("Empate entre as cartas!\n"); // Empate se as pontuações forem iguais
+                        }
+                    break;
+                    default:
+                        printf("Atributo inválido! Tente novamente.\n"); // Caso o usuário escolha um atributo inválido
+                }
+            }      
+
+            // Escolha os atributos que você deseja comparar com operadores ternários 6
+            printf("\nVocê chegou ao final das comparações:\n");
+            printf(" - Resultado da Comparação. - \n");
+            // Exibe o resultado da comparação
+            printf("Carta 1: %d pontos\n", pontuacaoFinal1); // Exibe a pontuação da carta 1
+            printf("Carta 2: %d pontos\n", pontuacaoFinal2); // Exibe a pontuação da carta 2
+            if(pontuacaoFinal1 > pontuacaoFinal2) {
+                printf("A carta 1 venceu!\n"); // A carta 1 vence se sua pontuação for maior
+            } else if(pontuacaoFinal2 > pontuacaoFinal1) {
+                printf("A carta 2 venceu!\n"); // A carta 2 vence se sua pontuação for maior
+            } else {
+                printf("Empate entre as cartas!\n"); // Empate se as pontuações forem iguais
+            }
+            break;
+            default:
+                printf("Atributo inválido! Tente novamente.\n"); // Caso o usuário escolha um atributo inválido
+        }
 }
